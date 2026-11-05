@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arteria - Web Companion & Control Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <h1>Arteria</h1>
+            <span class="subtitle">WaveCore Audio Studio</span>
+        </div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#controlador">Equalizador</a>
+            <a href="#downloads">Downloads</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Apresentação -->
+    <section id="home" class="hero">
+        <h2>Painel de Controle e Configuração</h2>
+        <p>Interface web responsiva para o protótipo de placa de áudio com equalização ativa de 3 bandas via USB-C[cite: 1].</p>
+    </section>
+
+    <!-- Seção do Equalizador (Simulador) -->
+    <section id="controlador" class="card">
+        <h3>🎛️ Equalizador de 3 Bandas</h3>
+        <p>Ajuste os parâmetros do dispositivo em tempo real:</p>
+        
+        <div class="slider-group">
+            <label for="bass">Graves (Bass): <span id="val-bass">0</span> dB</label>
+            <input type="range" id="bass" min="-12" max="12" value="0">
+        </div>
+
+        <div class="slider-group">
+            <label for="mid">Médios (Mid): <span id="val-mid">0</span> dB</label>
+            <input type="range" id="mid" min="-12" max="12" value="0">
+        </div>
+
+        <div class="slider-group">
+            <label for="treble">Agudos (Treble): <span id="val-treble">0</span> dB</label>
+            <input type="range" id="treble" min="-12" max="12" value="0">
+        </div>
+
+        <button id="btn-salvar">Salvar e Baixar Preset</button>
+    </section>
+
+    <!-- Seção de Downloads -->
+    <section id="downloads" class="card">
+        <h3>📥 Central de Downloads</h3>
+        <p>Baixe manuais, guias e pacotes de configuração para o seu Arteria.</p>
+        <ul>
+            <li><a href="#" onclick="alert('Baixando Manual do Usuário...'); return false;">📄 Manual do Usuário (PDF)</a></li>
+            <li><a href="#" onclick="alert('Baixando Firmware...'); return false;">⚙️ Atualização de Firmware v1.0</a></li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
