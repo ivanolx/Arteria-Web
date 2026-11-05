@@ -29,8 +29,16 @@
     <!-- Seção do Equalizador (Simulador) -->
     <section id="controlador" class="card">
         <h3>🎛️ Equalizador de 3 Bandas</h3>
-        <p>Ajuste os parâmetros do dispositivo em tempo real:</p>
+        <p>Ajuste os parâmetros manualmente ou escolha um perfil pré-configurado:</p>
         
+        <!-- Botões de Presets Rápidos -->
+        <div class="preset-buttons">
+            <button type="button" class="btn-preset" data-bass="0" data-mid="0" data-treble="0">Flat (Estúdio)</button>
+            <button type="button" class="btn-preset" data-bass="6" data-mid="-2" data-treble="4">Bass Boost</button>
+            <button type="button" class="btn-preset" data-bass="-4" data-mid="6" data-treble="2">Voz / Podcast</button>
+            <button type="button" class="btn-preset" data-bass="4" data-mid="0" data-treble="6">Clareza & Brilho</button>
+        </div>
+
         <div class="slider-group">
             <label for="bass">Graves (Bass): <span id="val-bass">0</span> dB</label>
             <input type="range" id="bass" min="-12" max="12" value="0">
@@ -48,17 +56,3 @@
 
         <button id="btn-salvar">Salvar e Baixar Preset</button>
     </section>
-
-    <!-- Seção de Downloads -->
-    <section id="downloads" class="card">
-        <h3>📥 Central de Downloads</h3>
-        <p>Baixe manuais, guias e pacotes de configuração para o seu Arteria.</p>
-        <ul>
-            <li><a href="#" onclick="alert('Baixando Manual do Usuário...'); return false;">📄 Manual do Usuário (PDF)</a></li>
-            <li><a href="#" onclick="alert('Baixando Firmware...'); return false;">⚙️ Atualização de Firmware v1.0</a></li>
-        </ul>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>

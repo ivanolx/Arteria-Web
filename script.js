@@ -7,18 +7,29 @@ const valBass = document.getElementById('val-bass');
 const valMid = document.getElementById('val-mid');
 const valTreble = document.getElementById('val-treble');
 const btnSalvar = document.getElementById('btn-salvar');
+const presetButtons = document.querySelectorAll('.btn-preset');
 
-// Atualizar valores na tela quando mexer nos sliders
-bassInput.addEventListener('input', (e) => {
-    valBass.textContent = e.target.value;
-});
+// Função para atualizar os valores de texto na tela
+function atualizarValores() {
+    valBass.textContent = bassInput.value;
+    valMid.textContent = midInput.value;
+    valTreble.textContent = trebleInput.value;
+}
 
-midInput.addEventListener('input', (e) => {
-    valMid.textContent = e.target.value;
-});
+// Listeners dos Sliders manuais
+bassInput.addEventListener('input', atualizarValores);
+midInput.addEventListener('input', atualizarValores);
+trebleInput.addEventListener('input', atualizarValores);
 
-trebleInput.addEventListener('input', (e) => {
-    valTreble.textContent = e.target.value;
+// Lógica dos Botões de Presets Pré-configurados
+presetButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        bassInput.value = button.getAttribute('data-bass');
+        midInput.value = button.getAttribute('data-mid');
+        trebleInput.value = button.getAttribute('data-treble');
+        
+        atualizarValores();
+    });
 });
 
 // Simular o download do arquivo de configuração/preset
@@ -33,7 +44,6 @@ btnSalvar.addEventListener('click', () => {
         data: new Date().toISOString()
     };
 
-    // Criando um arquivo JSON virtual para download
     const blob = new Blob([JSON.stringify(configData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
