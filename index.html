@@ -15,6 +15,7 @@
         </div>
         <nav>
             <a href="#home">Início</a>
+            <a href="#especificacoes">Hardware</a>
             <a href="#controlador">Equalizador</a>
             <a href="#downloads">Downloads</a>
         </nav>
@@ -24,6 +25,27 @@
     <section id="home" class="hero">
         <h2>Painel de Controle e Configuração</h2>
         <p>Interface web responsiva para o protótipo de placa de áudio com equalização ativa de 3 bandas via USB-C[cite: 1].</p>
+    </section>
+
+    <!-- Seção de Especificações Técnicas do Hardware -->
+    <section id="especificacoes" class="card">
+        <h3>⚙️ Especificações Técnicas do Hardware</h3>
+        <p>Conheça os detalhes construtivos do protótipo desenvolvido pela WaveCore Audio Studio[cite: 1, 4]:</p>
+        
+        <div class="specs-grid">
+            <div class="spec-item">
+                <strong>Dimensões Externas:</strong>
+                <span>Largura: 5,1 cm | Comprimento: 4,6 cm | Altura: 2,6 cm[cite: 4]</span>
+            </div>
+            <div class="spec-item">
+                <strong>Conectividade:</strong>
+                <span>Portas USB-C (IN / OUT) dedicadas para dispositivos móveis[cite: 1, 4].</span>
+            </div>
+            <div class="spec-item">
+                <strong>Processamento de Áudio:</strong>
+                <span>Equalização ativa de 3 bandas (Graves, Médios e Agudos)[cite: 1, 4].</span>
+            </div>
+        </div>
     </section>
 
     <!-- Seção do Equalizador (Simulador) -->
@@ -56,3 +78,17 @@
 
         <button id="btn-salvar">Salvar e Baixar Preset</button>
     </section>
+
+    <!-- Seção de Downloads -->
+    <section id="downloads" class="card">
+        <h3>📥 Central de Downloads</h3>
+        <p>Baixe manuais, guias e pacotes de configuração para o seu Arteria.</p>
+        <ul>
+            <li><a href="#" onclick="alert('Baixando Manual do Usuário...'); return false;">📄 Manual do Usuário (PDF)</a></li>
+            <li><a href="#" onclick="alert('Baixando Firmware...'); return false;">⚙️ Atualização de Firmware v1.0</a></li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -55,8 +55,61 @@ section {
     margin-bottom: 10px;
 }
 
+/* Estilização da Seção de Especificações */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.spec-item {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #00b37e;
+}
+
+.spec-item strong {
+    display: block;
+    color: #f1f1f5;
+    margin-bottom: 5px;
+}
+
+.spec-item span {
+    font-size: 14px;
+    color: #8d8d99;
+}
+
+/* Estilização do Equalizador e Presets */
+.preset-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0 25px 0;
+}
+
+.btn-preset {
+    background-color: #2a2a30;
+    color: #00b37e;
+    border: 1px solid #00b37e;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-preset:hover {
+    background-color: #00b37e;
+    color: #ffffff;
+}
+
 .slider-group {
     margin: 20px 0;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 6px;
 }
 
 .slider-group label {
@@ -66,8 +119,15 @@ section {
 }
 
 input[type="range"] {
+    -webkit-appearance: none;
     width: 100%;
+    height: 6px;
+    background: #323238;
+    border-radius: 3px;
+    outline: none;
     accent-color: #00b37e;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 button {
@@ -102,44 +162,4 @@ ul li a {
 
 ul li a:hover {
     text-decoration: underline;
-}
-.preset-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 15px 0 25px 0;
-}
-
-.btn-preset {
-    background-color: #2a2a30;
-    color: #00b37e;
-    border: 1px solid #00b37e;
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.btn-preset:hover {
-    background-color: #00b37e;
-    color: #ffffff;
-}
-.slider-group {
-    margin: 20px 0;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    border-radius: 6px;
-}
-
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 6px;
-    background: #323238;
-    border-radius: 3px;
-    outline: none;
-    accent-color: #00b37e;
-    margin-top: 10px;
-    cursor: pointer;
 }
