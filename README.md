@@ -13,10 +13,13 @@ Repositório oficial do sistema web de suporte, gerenciamento de presets e centr
 ## 🚀 Sobre o Projeto
 O **Arteria** consiste em um protótipo de placa de áudio ultracompacto com equalização ativa de 3 bandas (graves, médios e agudos) via conexão USB-C (IN/OUT) para dispositivos móveis. 
 
-Enquanto a parte de hardware gerencia o fluxo analógico e digital do som, este **Web Companion** foi desenvolvido para prover:
-* **Interface Responsiva:** Acesso multiplataforma (celular, tablet e desktop) para interagir com os perfis de áudio.
-* **Simulador de Equalização:** Ajustes visuais em tempo real das 3 bandas (Bass, Mid, Treble).
-* **Central de Downloads:** Área dedicada para obtenção de manuais, guias de configuração rápida e arquivos de customização (presets) para o dispositivo.
+Enquanto a parte de hardware gerencia o fluxo analógico e digital do som, este **Web Companion** apresenta uma demonstração interativa para configurar e compartilhar perfis de áudio:
+* **Interface Responsiva:** Experiência adaptada para celular, tablet e desktop.
+* **Equalizador de 3 bandas:** Ajustes em tempo real para graves, médios e agudos, com indicação de valores em dB.
+* **Perfis rápidos:** Ponto de partida equilibrado, reforço de graves, foco em voz e clareza.
+* **Salvar e exportar:** Salve os ajustes neste navegador ou baixe um arquivo JSON para compartilhar.
+
+> A interface é uma demonstração do projeto e não se conecta ao protótipo de hardware.
 
 ---
 
