@@ -14,19 +14,27 @@ Repositório oficial do sistema web de suporte, gerenciamento de presets e centr
 O **Arteria** consiste em um protótipo de placa de áudio ultracompacto com equalização ativa de 3 bandas (graves, médios e agudos) via conexão USB-C (IN/OUT) para dispositivos móveis. 
 
 Enquanto a parte de hardware gerencia o fluxo analógico e digital do som, este **Web Companion** apresenta uma demonstração interativa para configurar e compartilhar perfis de áudio:
-* **Interface Responsiva:** Experiência adaptada para celular, tablet e desktop.
+* **Interface Purple Cyberpunk:** Design renovado em tons roxos neon com alta fidelidade visual.
 * **Equalizador de 3 bandas:** Ajustes em tempo real para graves, médios e agudos, com indicação de valores em dB.
-* **Perfis rápidos:** Ponto de partida equilibrado, reforço de graves, foco em voz e clareza.
-* **Salvar e exportar:** Salve os ajustes neste navegador ou baixe um arquivo JSON para compartilhar.
+* **Visualizador Gráfico de Frequências:** Curva de equalização calculada em tempo real via Canvas.
+* **Prévia Interativa de Som (Web Audio API):** Teste os filtros de áudio em tempo real com gerador de áudio no navegador.
+* **Sistema de Slots & Arquivos:** Salve configurações em slots rápidos do navegador ou exporte/importe arquivos `.json` de presets.
 
-> A interface é uma demonstração do projeto e não se conecta ao protótipo de hardware.
+> A interface simula o processamento do hardware Arteria e fornece prévia sonora via software.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-* **HTML5, CSS3 & JavaScript** (Interface e Interatividade)
+* **HTML5, CSS3 (Custom Properties & Purple Dark Palette) & JavaScript (Web Audio API & Canvas)**
 * **Design Responsivo** (Foco em experiência mobile via USB-C)
 * **Git & GitHub** (Controle de versão e versionamento do projeto)
+
+---
+
+## 🔮 Próximas Evoluções Planejadas (Roadmap)
+1. **Integração WebUSB / Web Bluetooth API:** Permitir atualização de dados direto no protótipo físico via navegador.
+2. **Controle de Efeitos Adicionais:** Suporte para filtros de Reverb, Ganho de Entrada e Limiter.
+3. **Comunidade de Presets:** Compartilhamento de presets criados por usuários em nuvem.
 
 ---
 *Projeto acadêmico desenvolvido para o Centro Universitário UniSAPIENS.*

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0c1110">
+    <meta name="theme-color" content="#0a0612">
     <meta name="description" content="Configure e personalize o som do Arteria com um equalizador intuitivo de três bandas.">
     <title>Arteria — Seu som, do seu jeito</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,12 @@
                 <p class="eyebrow"><span class="eyebrow-line"></span> WAVECORE AUDIO STUDIO</p>
                 <h1>Seu som.<br><span>Seu jeito.</span></h1>
                 <p class="hero-description">Um ajuste muda tudo. Encontre o equilíbrio perfeito para cada momento com o Arteria.</p>
-                <a class="primary-link" href="#equalizador">Explorar equalizador <span aria-hidden="true">↘</span></a>
+                <div class="hero-actions">
+                    <a class="primary-link" href="#equalizador">Explorar equalizador <span aria-hidden="true">↘</span></a>
+                    <button class="button button-audio-preview" id="btn-audio-preview" type="button">
+                        <span class="preview-icon">▶</span> <span id="preview-text">Ouvir Prévia Interativa</span>
+                    </button>
+                </div>
             </div>
             <div class="hero-art" aria-label="Ilustração abstrata de ondas sonoras">
                 <div class="art-orbit orbit-one"></div>
@@ -61,6 +66,11 @@
                             <h3 id="active-profile">Som equilibrado</h3>
                         </div>
                         <span class="profile-indicator"><span class="status-dot"></span> <span id="profile-status">PRONTO</span></span>
+                    </div>
+
+                    <!-- Visualizador Dinâmico de Curva de Frequência -->
+                    <div class="spectrum-container">
+                        <canvas id="spectrum-canvas" width="600" height="100"></canvas>
                     </div>
 
                     <div class="preset-area">
@@ -101,11 +111,23 @@
                         </div>
                     </div>
 
+                    <!-- Slots Rápidos de Memória -->
+                    <div class="slots-area">
+                        <span class="small-label">MEMÓRIA RÁPIDA (SLOTS LOCAL)</span>
+                        <div class="slots-list">
+                            <button class="slot-button" id="slot-1" type="button">Slot 1 (Vazio)</button>
+                            <button class="slot-button" id="slot-2" type="button">Slot 2 (Vazio)</button>
+                            <button class="slot-button" id="slot-3" type="button">Slot 3 (Vazio)</button>
+                        </div>
+                    </div>
+
                     <div class="card-actions">
                         <button class="button button-secondary" id="btn-reset" type="button">Restaurar padrão</button>
                         <div class="action-group">
-                            <button class="button button-secondary" id="btn-save" type="button">Salvar ajuste</button>
-                            <button class="button button-primary" id="btn-download" type="button">Baixar preset <span aria-hidden="true">↓</span></button>
+                            <input type="file" id="file-input" accept=".json" style="display: none;">
+                            <button class="button button-secondary" id="btn-upload" type="button">Carregar preset</button>
+                            <button class="button button-secondary" id="btn-save" type="button">Salvar no Slot</button>
+                            <button class="button button-primary" id="btn-download" type="button">Baixar JSON <span aria-hidden="true">↓</span></button>
                         </div>
                     </div>
                 </div>
@@ -124,6 +146,7 @@
                         <div><span>Conexão</span><strong>USB-C <span>IN / OUT</span></strong></div>
                         <div><span>Equalização</span><strong>3 bandas ativas</strong></div>
                         <div><span>Dimensões</span><strong>5,1 × 4,6 × 2,6 cm</strong></div>
+                        <div><span>Firmware</span><strong>v1.0.4 (Simulado)</strong></div>
                     </div>
                     <div class="device-footer"><span class="status-dot"></span> <span>Protótipo WaveCore</span><span class="device-footer-mark">W·C</span></div>
                 </aside>
