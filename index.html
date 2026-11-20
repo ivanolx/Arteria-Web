@@ -70,7 +70,31 @@
 
                     <!-- Visualizador Dinâmico de Curva de Frequência -->
                     <div class="spectrum-container">
-                        <canvas id="spectrum-canvas" width="600" height="100"></canvas>
+                        <canvas id="spectrum-canvas" width="600" height="120" role="img" aria-label="Curva de resposta de frequência do equalizador, de 20 Hz a 20 kHz"></canvas>
+                    </div>
+
+                    <!-- Painel de áudio: fonte, play, A/B, limiter e volume -->
+                    <div class="audio-panel" role="group" aria-label="Prévia de áudio">
+                        <div class="audio-panel-head">
+                            <span class="small-label">PRÉVIA DE ÁUDIO</span>
+                            <span class="audio-status" id="audio-status" role="status" aria-live="polite">Parado</span>
+                        </div>
+                        <div class="audio-row">
+                            <button class="chip chip-play" id="btn-panel-play" type="button">▶ Tocar</button>
+                            <button class="chip" type="button" data-source="noise" aria-pressed="false">Ruído rosa</button>
+                            <button class="chip" id="btn-source-file" type="button" data-source="file" aria-pressed="false">Arquivo…</button>
+                            <button class="chip" type="button" data-source="mic" aria-pressed="false">Microfone</button>
+                            <input type="file" id="audio-file" accept="audio/*" hidden>
+                        </div>
+                        <div class="audio-row">
+                            <button class="chip is-active" id="btn-eq-bypass" type="button" aria-pressed="true" title="Compare o som com e sem equalização">EQ ligado</button>
+                            <button class="chip is-active" id="btn-limiter" type="button" aria-pressed="true" title="Evita distorção quando os ganhos são altos">Limiter</button>
+                            <label class="volume-control" for="volume">
+                                <span>Volume</span>
+                                <input type="range" id="volume" min="0" max="100" value="55" step="1" aria-label="Volume da prévia">
+                                <output id="val-volume" for="volume">55%</output>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="preset-area">
@@ -115,18 +139,30 @@
                     <div class="slots-area">
                         <span class="small-label">MEMÓRIA RÁPIDA (SLOTS LOCAL)</span>
                         <div class="slots-list">
-                            <button class="slot-button" id="slot-1" type="button">Slot 1 (Vazio)</button>
-                            <button class="slot-button" id="slot-2" type="button">Slot 2 (Vazio)</button>
-                            <button class="slot-button" id="slot-3" type="button">Slot 3 (Vazio)</button>
+                            <div class="slot">
+                                <button class="slot-button" id="slot-1" type="button">Slot 1 (Vazio)</button>
+                                <button class="slot-mini" id="slot-save-1" type="button" aria-label="Salvar ajuste atual no Slot 1" title="Sobrescrever com o ajuste atual">↓</button>
+                                <button class="slot-mini" id="slot-clear-1" type="button" aria-label="Limpar Slot 1" title="Limpar slot" disabled>×</button>
+                            </div>
+                            <div class="slot">
+                                <button class="slot-button" id="slot-2" type="button">Slot 2 (Vazio)</button>
+                                <button class="slot-mini" id="slot-save-2" type="button" aria-label="Salvar ajuste atual no Slot 2" title="Sobrescrever com o ajuste atual">↓</button>
+                                <button class="slot-mini" id="slot-clear-2" type="button" aria-label="Limpar Slot 2" title="Limpar slot" disabled>×</button>
+                            </div>
+                            <div class="slot">
+                                <button class="slot-button" id="slot-3" type="button">Slot 3 (Vazio)</button>
+                                <button class="slot-mini" id="slot-save-3" type="button" aria-label="Salvar ajuste atual no Slot 3" title="Sobrescrever com o ajuste atual">↓</button>
+                                <button class="slot-mini" id="slot-clear-3" type="button" aria-label="Limpar Slot 3" title="Limpar slot" disabled>×</button>
+                            </div>
                         </div>
                     </div>
 
                     <div class="card-actions">
                         <button class="button button-secondary" id="btn-reset" type="button">Restaurar padrão</button>
                         <div class="action-group">
-                            <input type="file" id="file-input" accept=".json" style="display: none;">
+                            <input type="file" id="file-input" accept=".json,application/json" hidden>
                             <button class="button button-secondary" id="btn-upload" type="button">Carregar preset</button>
-                            <button class="button button-secondary" id="btn-save" type="button">Salvar no Slot</button>
+                            <button class="button button-secondary" id="btn-save" type="button" title="Guarda o ajuste atual neste navegador e o restaura na próxima visita">Salvar ajuste</button>
                             <button class="button button-primary" id="btn-download" type="button">Baixar JSON <span aria-hidden="true">↓</span></button>
                         </div>
                     </div>
@@ -161,6 +197,7 @@
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="eq-math.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
